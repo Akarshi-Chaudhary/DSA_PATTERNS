@@ -1,0 +1,25 @@
+LeetCode 3498 — Reverse Degree of a String
+
+```java
+class Solution {
+    public int reverseDegree(String s) {
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            int value = 26 - (ch - 'a');
+            int position = i + 1;
+            sum += value * position;
+        }
+        return sum;
+    }
+}
+```
+Remember These 3 Things
+int value = 26 - (ch - 'a'); // Reversed alphabet position
+int position = i + 1;        // 1-indexed string position
+sum += value * position;     // Add product to sum
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Important: Your original formula was correct. The only correction was the example's total: 26 + 50 + 72 = 148.
